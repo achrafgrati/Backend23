@@ -4,7 +4,7 @@ const Categorie=require("../models/categorie");
 const { authorizeRoles } = require('../middleware/authorizeRoles');
 const { verifyToken } = require('../middleware/verifyToken');
 
-router.post('/',verifyToken,authorizeRoles("admin","visiteur"), async (req, res) => {
+router.post('/',verifyToken,authorizeRoles("user","visiteur"), async (req, res) => {
    // const nomcategorie=req.body.nomcategorie
 //const imagecategorie=req.body.imagecategorie
    // const { nomcategorie, imagecategorie} = req.body;
