@@ -6,7 +6,7 @@ const SCategorie=require("../models/scategorie")
 router.get('/', async (req, res, )=> {
 try {
 const scat = await SCategorie.find({}, null, {sort: {'_id': -
-1}}).populate("categorieID")
+1}})  //.populate("categorieID")
 res.status(200).json(scat);
 } catch (error) {
 res.status(404).json({ message: error.message });
