@@ -8,11 +8,17 @@ const articleRouter = require('./routes/article.route');
 const paymentRouter = require('./routes/payment.route');
 const userRouter = require('./routes/user.route');
 const cors = require('cors')
+// Initialize compression module
+const compression = require('compression');
+
 dotenv.config()
 const app = express();
 //BodyParser Middleware
 app.use(express.json());
 app.use(cors())
+
+// Compress all HTTP responses
+app.use(compression());
 
 mongoose.set("strictQuery", false);
 // Connexion à la base données
